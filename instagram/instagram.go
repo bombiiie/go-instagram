@@ -91,6 +91,8 @@ type Parameters struct {
 	Count        uint64
 	MinID        string
 	MaxID        string
+	NextMinID    string
+	MinTagID     string
 	MinTimestamp int64
 	MaxTimestamp int64
 	Lat          float64
@@ -186,6 +188,8 @@ type ResponseMeta struct {
 type ResponsePagination struct {
 	NextURL   string `json:"next_url,omitempty"`
 	NextMaxID string `json:"next_max_id,omitempty"`
+	NextMinID string `json:"next_min_id,omitempty"`
+	MinTagID  string `json:"min_tag_id,omitempty"`
 }
 
 // NewClient returns a new Instagram API client. if a nil httpClient is

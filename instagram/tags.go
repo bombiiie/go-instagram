@@ -52,6 +52,12 @@ func (s *TagsService) RecentMedia(tagName string, opt *Parameters) ([]Media, *Re
 		if opt.MaxID != "" {
 			params.Add("max_id", opt.MaxID)
 		}
+		if opt.NextMinID != "" {
+			params.Add("next_min_id", opt.NextMinID)
+		}
+		if opt.MinTagID != "" {
+			params.Add("min_tag_id", opt.MinTagID)
+		}
 		u += "?" + params.Encode()
 	}
 	req, err := s.client.NewRequest("GET", u, "")
